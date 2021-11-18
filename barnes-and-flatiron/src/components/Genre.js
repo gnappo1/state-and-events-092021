@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Genre({genre}) {
+const Genre = ({genre}) => {
     return (
         <div style={{margin:"auto"}}>
            - {genre.toUpperCase()} -
         </div>
     )
 }
+
+export default Genre;

@@ -1,7 +1,7 @@
 import BookCard from "./BookCard"
 import Genre from "./GenreList";
 
-function BookContainer(props){
+const BookContainer = (props) => {
     return(
         <>
             {/* <Genre genreList={props.genreList}/> */}

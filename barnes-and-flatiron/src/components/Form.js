@@ -1,4 +1,4 @@
-function Form(){
+const Form = () =>{
     return(
         <form style={{display:"flex", flexDirection:"column", width:"400px", margin:"auto"}}>
             <label>Title</label>

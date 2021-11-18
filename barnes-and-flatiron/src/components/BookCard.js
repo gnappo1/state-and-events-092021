@@ -1,4 +1,4 @@
-function BookCard({book:{title,author,price=10,genre,image="https://nnpbeta.wustl.edu/img/bookCovers/genericBookCover.jpg"}}){
+const BookCard = ({book:{title,author,price=10,genre,image="https://nnpbeta.wustl.edu/img/bookCovers/genericBookCover.jpg"}}) =>{
 //TODO: control like with state
     return(
         <div style={{border:"solid", width:"300px", margin:"auto"}}>
@@ -7,7 +7,7 @@ function BookCard({book:{title,author,price=10,genre,image="https://nnpbeta.wust
             <p>${price}</p>
             <p>{genre}</p>
             <p>💙</p>
-            <img  style={{width:"200px"}}src={image} />
+            <img  alt="book logo" style={{width:"200px"}}src={image} />
         </div>
     )
 }
