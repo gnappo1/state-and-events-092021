@@ -6,7 +6,7 @@ const BookCard = ({book:{title,author,price=10,genre,image="https://nnpbeta.wust
             <p>{author}</p>
             <p>${price}</p>
             <p>{genre}</p>
-            <p>💙</p>
+            <p>&#9825;</p>
             <img  alt="book logo" style={{width:"200px"}}src={image} />
         </div>
     )

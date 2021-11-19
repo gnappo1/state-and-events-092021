@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Genre = ({genre}) => {
+const Genre = ({genre, handleClick}) => {
     return (
-        <div style={{margin:"auto"}}>
+        <div onClick={handleClick} style={{margin:"auto"}}>
            - {genre.toUpperCase()} -
         </div>
     )

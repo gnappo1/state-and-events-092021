@@ -1,6 +1,6 @@
-const Form = () =>{
+const Form = ({handleSubmit}) =>{
     return(
-        <form style={{display:"flex", flexDirection:"column", width:"400px", margin:"auto"}}>
+        <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", width:"400px", margin:"auto"}}>
             <label>Title</label>
             <input type="text" />
             <label>Author</label>
@@ -8,7 +8,8 @@ const Form = () =>{
             <label>Genre</label>
             <input type="text" />
             <label>Price</label>
-            <input type="number" /><br />
+            <input type="number" step="0.01" /><br />
+            <input type="reset" />
             <input type="submit" value="Create" />
         </form>
     )

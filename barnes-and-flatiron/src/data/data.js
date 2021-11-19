@@ -1,11 +1,11 @@
-export const books = [
+const books = [
     {
       id: 1,
       title: "Eloquent JavaScript: A Modern Introduction to Programming",
       author: "Marjin Haverbeke",
       genre: "technical",
       liked: true,
-    
+      price: 15,
       reviews: [
         {
          user_id: 1,
@@ -82,7 +82,7 @@ export const books = [
       ]
     }
   ]
-export const genres = [
+const genres = [
     "Horror",
     "Technical",
     "Fantasy",
@@ -92,3 +92,5 @@ export const genres = [
     "Mystery",
     "Biography"
   ]
+
+  export {books, genres}
