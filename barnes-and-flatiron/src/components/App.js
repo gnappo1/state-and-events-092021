@@ -14,11 +14,9 @@ const App = () => {
     setBooks(filteredBooks)
   }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const newBook = {title: e.target[0].value, author: e.target[1].value, genre: e.target[2].value, price: e.target[3].value, liked: false, id: books.slice(-1).id + 1}
-    setBooks(currentBooks => [...currentBooks, newBook])
-    e.target.reset()
+  const handleSubmit = book => {
+    const bookWithId = {...book, id: books.slice(-1)[0].id + 1}
+    setBooks(currentBooks => [...currentBooks, bookWithId])
   }
 
   return (

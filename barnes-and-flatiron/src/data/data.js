@@ -19,7 +19,7 @@ const books = [
      author: "Jon Duckett",
       genre: "technical",
       liked: true,
-      image: "https://images-na.ssl-images-amazon.com/images/I/31SRWF+LkKL._SX258_BO1,204,203,200_.jpg",
+      imageUrl: "https://images-na.ssl-images-amazon.com/images/I/31SRWF+LkKL._SX258_BO1,204,203,200_.jpg",
       price: 15,
       reviews: [
         {
@@ -34,7 +34,7 @@ const books = [
      author: "David Flanagan",
       genre: "technical",
       liked: false,
-      image: "https://images-na.ssl-images-amazon.com/images/I/51wijnc-Y8L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      imageUrl: "https://images-na.ssl-images-amazon.com/images/I/51wijnc-Y8L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       price: 13,
       reviews: [
         {
@@ -53,7 +53,7 @@ const books = [
       author: "Douglas Crockford",
       genre: "technical",
       liked: true,
-      image: "https://learning.oreilly.com/library/cover/9780596517748/250w/",
+      imageUrl: "https://learning.oreilly.com/library/cover/9780596517748/250w/",
       price: 10,
       reviews: [
         {
@@ -72,7 +72,7 @@ const books = [
      author: " Alex Banks and Eve Porcello",
       genre: "technical",
       liked: false,
-      image: "https://images-na.ssl-images-amazon.com/images/I/51FHuacxYjL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      imageUrl: "https://images-na.ssl-images-amazon.com/images/I/51FHuacxYjL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       price: 34,
       reviews: [
         {
