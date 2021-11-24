@@ -1,41 +1,53 @@
-import {useState} from 'react'
+import {useReducer} from 'react'
+
+const initialState = {
+    title: "",
+    author: "",
+    genre: "",
+    imageUrl: "",
+    price: ""
+}
+
+const reducer = (state, {key, value}) => {
+    return {
+        ...state,
+        [key]: value
+    }
+}
 
 const Form = ({handleSubmit}) => {
-    const [title, setTitle] = useState("")
-    const [author, setAuthor] = useState("")
-    const [genre, setGenre] = useState("")
-    const [imageUrl, setImageUrl] = useState("")
-    const [price, setPrice] = useState("")
+    const [state, dispatch] = useReducer(reducer, initialState)
 
     const validateForm = e => {
         e.preventDefault()
-        const inputs = [title, author, genre, imageUrl, price]
-        const bool = inputs.some(element => element.trim() === "")
+        const bool = Object.values(state).some(element => element.trim() === "")
         if (!!bool) {
             alert("You must fill out all the input fields!")
         } else {
-            const newBook = {title, author, genre, imageUrl, price, liked: false, reviews: []}
-            setTitle("")
-            setAuthor("")
-            setGenre("")
-            setImageUrl("")
-            setPrice("")
+            const newBook = {...state, liked: false, reviews: []}
+            Object.keys(state).forEach(key => dispatch({key, value: ""}))
             handleSubmit(newBook)
         }
     }
 
+    const handleChange = e => {
+        dispatch({key: e.target.name, value: e.target.value})
+    }
+
+    const {title, author, genre, imageUrl, price} = state
+
     return(
         <form onSubmit={validateForm} style={{display:"flex", flexDirection:"column", width:"400px", margin:"auto"}}>
             <label>Title</label>
-            <input name="title" onChange={e => setTitle(e.target.value)} value={title} type="text" required/>
+            <input name="title" onChange={handleChange} value={title} type="text" required/>
             <label>Author</label>
-            <input name="author" onChange={e => setAuthor(e.target.value)} value={author} type="text" required/>
+            <input name="author" onChange={handleChange} value={author} type="text" required/>
             <label>Genre</label>
-            <input name="genre" onChange={e => setGenre(e.target.value)} value={genre} type="text" required/>
+            <input name="genre" onChange={handleChange} value={genre} type="text" required/>
             <label>Image Url</label>
-            <input name="imageUrl" onChange={e => setImageUrl(e.target.value)} value={imageUrl} type="text" required/>
+            <input name="imageUrl" onChange={handleChange} value={imageUrl} type="text" required/>
             <label>Price</label>
-            <input name="price" onChange={e => setPrice(e.target.value)} value={price} type="number" step="0.01" required/><br />
+            <input name="price" onChange={handleChange} value={price} type="number" step="0.01" required/><br />
             <input type="reset" />
             <input type="submit" value="Create" />
         </form>
