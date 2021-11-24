@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className="App" style={{textAlign:"center"}}>
       <Header storeName="Barnes and Flatiron" slogan="Live Love Code Bake Repeat"/>
-      <Form handleSubmit={handleSubmit}/>
+      <Form handleNewBook={handleSubmit}/>
       <div style={{display:"flex"}}>
         <GenreList handleClick={handleClick} genreList={genres} />
       </div>
