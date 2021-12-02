@@ -2,7 +2,7 @@ import BookContainer from "./BookContainer";
 import Header from "./Header";
 import GenreList from "./GenreList";
 import Form from "./Form";
-// import {books, genres} from "../data/data.js"
+import Counter from "./Counter";
 import {useState, useEffect} from 'react'
 
 const App = () => {
@@ -65,6 +65,7 @@ const App = () => {
     <div className="App" style={{textAlign:"center"}}>
       <button onClick={() => setcartView(bool => !bool)}>Cart</button>
       <Header storeName="Barnes and Flatiron" slogan="Live Love Code Bake Repeat"/>
+      <Counter />
       <Form handleNewBook={handleSubmit}/>
       <div style={{display:"flex"}}>
         <GenreList handleClick={handleClick} genreList={genresList} />
