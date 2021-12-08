@@ -4,7 +4,7 @@ import Genre from './Genre'
 const GenreList = ({genreList, handleClick}) =>{
     return(
         <div style={{display:"flex"}}>
-            {genreList.map(genre => <Genre handleClick={handleClick} genre={genre} />)}
+            {genreList.map((genre, index) => <Genre key={index} handleClick={handleClick} genre={genre} />)}
         </div>
     )
 }

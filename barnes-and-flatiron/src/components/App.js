@@ -2,8 +2,11 @@ import BookContainer from "./BookContainer";
 import Header from "./Header";
 import GenreList from "./GenreList";
 import Form from "./Form";
+import BookDetails from "./BookDetails";
+import Navbar from "./Navbar";
 import Counter from "./Counter";
 import {useState, useEffect} from 'react'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 const App = () => {
   const [cart, setCart] = useState([])
@@ -63,18 +66,40 @@ const App = () => {
 
   return (
     <div className="App" style={{textAlign:"center"}}>
-      <button onClick={() => setcartView(bool => !bool)}>Cart</button>
-      <Header storeName="Barnes and Flatiron" slogan="Live Love Code Bake Repeat"/>
-      <Counter />
-      <Form handleNewBook={handleSubmit}/>
-      <div style={{display:"flex"}}>
-        <GenreList handleClick={handleClick} genreList={genresList} />
-      </div>
-      {!!cartView ? (
-        <BookContainer handleDelete={handleDelete} addToCart={addToCart} booksList={cart} genreList={genresList}/> 
-      ) : (
-        <BookContainer handleDelete={handleDelete} addToCart={addToCart} booksList={filteredList} genreList={genresList}/>
-      )}
+      <Router>
+        <Navbar />
+        <Header storeName="Barnes and Flatiron" slogan="Live Love Code Bake Repeat"/>
+        <Switch>
+
+          <Route path="/books/new">
+            <Form handleNewBook={handleSubmit}/>
+          </Route>
+
+
+          <Route path="/books/:bookId">
+            <BookDetails booksList={booksList} handleDelete={handleDelete} addToCart={addToCart}/>
+          </Route>
+
+          <Route path="/books">
+            <div style={{display:"flex"}}>
+              <GenreList handleClick={handleClick} genreList={genresList} />
+            </div>
+            <BookContainer handleDelete={handleDelete} addToCart={addToCart} booksList={filteredList} genreList={genresList}/>
+          </Route>
+
+          <Route path="/cart">
+            <BookContainer handleDelete={handleDelete} addToCart={addToCart} booksList={cart} genreList={genresList}/> 
+          </Route>
+          
+          <Route exact path="/">
+            <Counter />
+          </Route>
+
+          <Route path="*">
+            <h3>404 Page Not Found</h3>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
