@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-const BookCard = ({handleDelete, addToCart, book:{id, title,author,price=10,genre,imageUrl="https://nnpbeta.wustl.edu/img/bookCovers/genericBookCover.jpg"}}) =>{
+const BookCard = ({book:{id, title,author,price=10,genre}}) =>{
 
   return(
     <div style={{border:"solid", width:"300px", margin:"auto"}}>
