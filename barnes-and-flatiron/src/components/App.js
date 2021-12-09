@@ -2,6 +2,7 @@ import BookContainer from "./BookContainer";
 import Header from "./Header";
 import GenreList from "./GenreList";
 import Form from "./Form";
+import EditForm from "./EditForm";
 import BookDetails from "./BookDetails";
 import Navbar from "./Navbar";
 import Counter from "./Counter";
@@ -10,7 +11,6 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 const App = () => {
   const [cart, setCart] = useState([])
-  const [cartView, setcartView] = useState(false)
   const [booksList, setBooks] = useState([])
   const [filteredList, filterBooks] = useState(booksList)
   const [genresList, setGenres] = useState([])
@@ -54,7 +54,6 @@ const App = () => {
     const newList = filteredList.filter(book => book.title !== title)
     filterBooks(newList)
     setBooks(newList)
-
   }
 
   const addToCart = (book) => {
@@ -76,6 +75,10 @@ const App = () => {
           </Route>
 
 
+          <Route path="/books/:bookId/edit">
+            <EditForm booksList={booksList} />
+          </Route>
+          
           <Route path="/books/:bookId">
             <BookDetails booksList={booksList} handleDelete={handleDelete} addToCart={addToCart}/>
           </Route>
