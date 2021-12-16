@@ -6,6 +6,7 @@
       "author": "Marjin Haverbeke",
       "genre": "technical",
       "liked": true,
+      "inCart": false,
       "price": 15,
       "reviews": [
         {
@@ -20,6 +21,7 @@
       "author": "Jon Duckett",
       "genre": "technical",
       "liked": true,
+      "inCart": false,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/31SRWF+LkKL._SX258_BO1,204,203,200_.jpg",
       "price": "16",
       "reviews": [
@@ -35,6 +37,7 @@
       "author": "David Flanagan",
       "genre": "technical",
       "liked": false,
+      "inCart": false,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51wijnc-Y8L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "price": "17",
       "reviews": [
@@ -54,6 +57,7 @@
       "author": "Douglas Crockford",
       "genre": "technical",
       "liked": true,
+      "inCart": false,
       "imageUrl": "https://learning.oreilly.com/library/cover/9780596517748/250w/",
       "price": 10,
       "reviews": [
@@ -73,6 +77,7 @@
       "author": " Alex Banks and Eve Porcello",
       "genre": "technical",
       "liked": false,
+      "inCart": false,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51FHuacxYjL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
       "price": "33",
       "reviews": [

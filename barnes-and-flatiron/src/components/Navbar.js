@@ -7,7 +7,7 @@ const style = {
     textDecoration: "none"
 }
 
-const Navbar = () => {
+const Navbar = ({cart}) => {
     return (
     <>
         <NavLink
@@ -52,7 +52,7 @@ const Navbar = () => {
             }}
             style={style}
             >
-            Cart
+            Cart({cart.length})
         </NavLink>
     </>
     )

@@ -79,7 +79,7 @@ export default class App extends PureComponent {
     return (
       <div className="App" style={{textAlign:"center"}}>
         <Router>
-          <Navbar />
+          <Navbar cart={this.state.cart} />
           <Header storeName="Barnes and Flatiron" slogan="Live Love Code Bake Repeat"/>
           <Switch>
   
