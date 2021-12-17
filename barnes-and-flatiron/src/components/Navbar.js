@@ -54,6 +54,17 @@ const Navbar = ({cart}) => {
             >
             Cart({cart.length})
         </NavLink>
+        <NavLink
+            to="/test"
+            exact
+            activeStyle={{
+                fontWeight: "bold",
+                color: "red"
+            }}
+            style={style}
+            >
+            Test
+        </NavLink>
     </>
     )
 }

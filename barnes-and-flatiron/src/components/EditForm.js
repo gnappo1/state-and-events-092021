@@ -3,7 +3,7 @@ import {useParams, useHistory} from 'react-router-dom'
 import {useEffect, useState} from 'react'
 
 
-const EditForm = ({booksList}) => {
+const EditForm = () => {
     const { bookId } = useParams();
     const [book, setBook] = useState({})
     const [isLoaded, setIsLoaded] = useState(false)

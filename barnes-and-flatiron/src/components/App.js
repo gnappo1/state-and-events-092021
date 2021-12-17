@@ -5,6 +5,7 @@ import Form from "./Form";
 import EditForm from "./EditForm";
 import BookDetails from "./BookDetails";
 import Navbar from "./Navbar";
+import Test from "./Test";
 import Counter from "./Counter";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import { PureComponent } from 'react'
@@ -107,6 +108,10 @@ export default class App extends PureComponent {
               <BookContainer handleDelete={this.handleDelete} addToCart={this.addToCart} booksList={this.state.cart} genreList={this.state.genresList}/> 
             </Route>
             
+            <Route exact path="/test">
+              <Test />
+            </Route>
+
             <Route exact path="/">
               <Counter />
             </Route>
